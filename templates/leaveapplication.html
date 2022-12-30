@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+	<head>
+        {% load static %}
+		<title>Emp Register</title>
+		<link href="static/css/table.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Lobster|Pacifico:400,700,300|Roboto:400,100,100italic,300,300italic,400italic,500italic,500'  rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,500,600,700,300' rel='stylesheet' type='text/css'>
+		<!--webfonts-->
+	</head>
+    <body>
+			<!--start-login-form-->
+<div class="container">
+  <h1>Leave Applications </h1>
+  {% csrf_token %}
+    <table class="rwd-table">
+      <tbody>
+
+        <tr>
+
+          <th>Leave Type</th>
+          <th>Leave Days</th>
+          <th>Reason For Leave</th>
+          <th>Employee ID</th>
+            <th>Approve Leave</th>
+
+
+        </tr>
+         {% for i in data %}
+        <tr>
+          <td data-th="Supplier Code">
+            {{i.ltype}}
+          </td>
+          <td data-th="Supplier Name">
+            {{i.ldays}}
+          </td>
+          <td data-th="Invoice Number">
+            {{i.lmsg}}
+          </td>
+             <td data-th="Invoice Number">
+            {{i.lid}}
+          </td>
+          <td data-th="Invoice Number">
+
+
+            <a href="{% url 'Approve' lidx=i.lid %}">Approve Leave</a>
+
+            <!--<a href="../itemorder/{{name}}">{{name}}</a>-->
+
+          </td>
+            <td data-th="Invoice Number">
+
+
+            <a href="{% url 'Deny' lidx=i.lid %}">Deny Leave</a>
+
+            <!--<a href="../itemorder/{{name}}">{{name}}</a>-->
+
+          </td>
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <h3>Leave Management</h3>
+  </div>
+    </body>
+</html>

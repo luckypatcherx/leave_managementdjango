@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<title>LMS home page</title>
+		<link href="{% static 'css/stylenew.css' %}" rel='stylesheet' type='text/css'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+	</head>
+	<body>
+			<div class="login-form">
+                <h1>Leave Management System</h1>
+                <h1>Welcome To LMS</h1><br>
+                    <form method="post" action="./hrln">
+                        {% csrf_token %}
+                        <div class="submit">
+                            <input type="submit" value="H.R LOGIN"/>
+                        </div>
+                    </form><br>
+                    <form method="post" action="./empln">
+                        {% csrf_token %}
+                        <div class="submit">
+                            <input type="submit" value="STAFF LOGIN"/>
+                        </div>
+                    </form>
+			</div>
+	</body>
+</html>
+

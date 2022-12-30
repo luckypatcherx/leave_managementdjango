@@ -1,0 +1,110 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+<head>
+    {% load static %}
+<title>Leave request</title>
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="Hotel Booking Enquiry Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+<!-- Custom-Style-Sheet -->
+<link rel="stylesheet" href="static/css/leavestyle.css" type="text/css" media="all">
+<link rel="stylesheet" href="static/css/jquery-ui.css" type="text/css" media="all">
+<!-- //Custom-Style-Sheet -->
+<!-- Fonts -->
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"  type="text/css" media="all">
+<link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+<!-- //Fonts -->
+<!-- Default-JavaScript -->
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+{% if current_user %}
+<link rel="stylesheet" href="static/css/leavestyle.css" type="text/css" media="all">
+
+        <h2>welcome <span style="...">{{current_user}}</span>!</h2>
+		 <a href="{% url 'logoutx' %}">Logout</a>
+	<li><form action="logoutx" method="post">{% csrf_token %}<a href="logoutx"><i class="fa fa-facebook" aria-hidden="true"></i> <p>Change Password</p></a></form></li>
+{% else %}
+        <h2>login to access this website !</h2>
+    {% endif %}
+    {% block body %} {% endblock %}
+<!-- //Head -->
+<!-- Body -->
+<body>
+	<h1>Leave Management System</h1>
+		<div class="containerw3layouts-agileits">
+			<div class="w3layoutscontactagileits">
+				<h2>Leave Request Form</h2>
+					<div id="wrapper">
+							<form action="leaveregister" method="post">
+								{% csrf_token %}
+
+								<div id="login" class="animate w3layouts agileits form">
+
+
+									<div class="ferry ferry-from">
+<!--										<label>USERID</label>-->
+<!--										<select name="userid">-->
+										<label>User Id</label>
+											<input type="none" name="userid" value={{current_user}}>{{current_user}}</INPUT>
+
+										</select>
+										<label>Leave Type</label>
+										<select name="type">
+											<option value="Casual">Casual Leave</option>
+											<option value="Earned">Earned Leave</option>
+											<option value="Emergency">Emergency Leave</option>
+											<option value="Loss of Pay">Loss Of Pay</option>
+
+										</select>
+									</div>
+
+									<div class="book-pag agileits w3layouts">
+
+										<div class="book-pag-frm1 agileits w3layouts">
+											<label>Leave From</label>
+                                            <input class="date agileits w3layouts" id="datepicker2" type="date" value="Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required="">
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="tickets">
+										<div class="persons">
+											<label>No. Of Days</label>
+											<input type="number" name="Number" placeholder="1" >
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="ferry ferry-from">
+										<label>Reason</label>
+										<textarea id="message" name="message" placeholder="Enter here" title="Please enter Your Queries"></textarea>
+									</div>
+									<div class="wthreesubmitaits">
+										<center><input type="submit" name="submit" value="Apply"></center>
+									</div>
+								</div>
+								</form>
+						</div>
+			</div>
+		</div>
+		<!-- Necessary-JavaScript-Files-&-Links -->
+			<!-- Date-Picker-JavaScript -->
+				<script src="js/jquery-ui.js"></script>
+				<script>
+					$(function() {
+						$( "#datepicker,#datepicker1,#datepicker2" ).datepicker();
+					});
+				</script>
+			<!-- //Date-Picker-JavaScript -->
+		<!-- //Necessary-JavaScript-Files-&-Links -->
+	</body>
+	<!-- //Body -->
+</html>

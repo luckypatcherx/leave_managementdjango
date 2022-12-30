@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% load static %}
+		<title>LMS H.R login page</title>
+		<link href="{% static 'css/new.css' %}" rel='stylesheet' type='text/css'/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>
+	</head>
+	<body>
+			<div class="login-form">
+					<h1>LMS welcomes you H.R</h1>
+					<h1>login here</h1>
+						<form method="POST" action="./hrvw">
+							{% csrf_token %}
+							<span>
+								<input type="number" class="user" name="id" >
+							</span>
+							<span>
+					        	<input type="password" class="lock" name="password">
+					        </span>
+							<div class="submit">
+								<input type="submit" value="H.R LOGIN"/>
+							</div>
+						</form>
+			</div>
+	</body>
+</html>
+

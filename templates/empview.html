@@ -1,0 +1,65 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Employee Panel</title>
+<!-- Custom Theme files -->
+<link href="static/css/adminstyle.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- for-mobile-apps -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Shaded Profile Widget Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<!-- //for-mobile-apps -->
+<!-- font-awesome icons -->
+<link href="static/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!--Google Fonts-->
+<link href='//fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+{% if current_user %}
+
+        <h2>welcome <span style="...">{{current_user}}</span>!</h2>
+		 <a href="{% url 'logoutx' %}">Logout</a>
+	<li><form action="logoutx" method="post">{% csrf_token %}<a href="logoutx"><i class="fa fa-facebook" aria-hidden="true"></i> <p>Change Password</p></a></form></li>
+{% else %}
+        <h2>login to access this website !</h2>
+    {% endif %}
+    {% block body %} {% endblock %}
+<!--profile start here-->
+<h1>Leave Management System</h1>
+<div class="profile">
+	<div class="wrap">
+		<div class="profile-main">
+			<div class="profile-pic wthree">
+				<img src="images/p1.png" alt="">
+				<h2>LMS welcomes You</h2>
+				<h3><b>Employee Panel</b></h3>
+			</div>
+
+			</div>
+			<div class="w3ls-touch">
+				<h5><u><b>Utilities</b></u></h5>
+				<div class="social">
+					<ul>
+						<li><form action="psv" method="post">{% csrf_token %}<a href="psv"><i class="fa fa-facebook" aria-hidden="true"></i> <p>Change Password</p></a></form></li>
+						<li><form action="leave" method="post">{% csrf_token %} <a href="leave"><i class="fa fa-twitter" aria-hidden="true"></i> <p>Leave Request</p></a></form></li>
+						<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> <p>Leave status</p></a></li>
+							<li>  </li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!--profile end here-->
+
+</body>
+</html>

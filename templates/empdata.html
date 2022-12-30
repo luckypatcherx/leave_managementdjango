@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+	<head>
+        {% load static %}
+		<title>Emp Register</title>
+		<link href="static/css/addempstyle.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<!--webfonts-->
+		<link href='http://fonts.googleapis.com/css?family=Lobster|Pacifico:400,700,300|Roboto:400,100,100italic,300,300italic,400italic,500italic,500'  rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,500,600,700,300' rel='stylesheet' type='text/css'>
+		<!--webfonts-->
+	</head>
+    <body>
+			<!--start-login-form-->
+<H1>EMPLOYEE DATA</H1>
+ {% csrf_token %}
+<table>
+  <thead>
+
+    <tr>
+      <th>First Name</th>
+      <th>Department</th>
+      <th>Employee Id</th>
+      <th>Mobile</th>
+    </tr>
+  {% for i in data %}
+  </thead>
+  <tbody>
+    <tr>
+      <td data-column="First Name">{{i.name}}</td>
+      <td data-column="Department">{{i.dept}}</td>
+      <td data-column="Emp Id">{{i.empid}}</td>
+      <td data-column="Mobile">{{i.mob}}</td>
+    </tr>
+   {% endfor %}
+
+  </tbody>
+</table>
+    </body>
+</html>
+
+
