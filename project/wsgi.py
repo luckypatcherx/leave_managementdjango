@@ -17,9 +17,8 @@ if project_home not in sys.path:
 
 
 
-
+from django.core.wsgi import get_wsgi_application
 #set environment variable to tell django where your serttings.py file is
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'project.settings')
-# serve django via WSGI
-from django.core.wsgi import get_wsgi_application
+
 application = get_wsgi_application()
